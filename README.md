@@ -10,15 +10,23 @@ This component is made from the following behaviours:
 - `Weapon Controller`
 
 And the following states:
-- `BulletDestroy`
 - `Gun`
-- `Target
 - `WeaponSwitching`
-
-### BulletDestroy
-
-This state will simply make the desired bullet disappear or 
+- `Target`
+- `BulletDestroy`
 
 ### Gun
 
-After removing the collider in our 3D object (player) and adding a Character Controller component to it, we will need to add an empty game object to our character (in the hierarchy) called GroundCheck. In the scene, we will place this right at the botton of the 3D object but still inside its body. This invisible object alongside with code will check what our player is colliding with, detecting what layers are considered Ground and will reset our velocity. Lastly, this component will allow us to jump. When added to our player, we will need to refer the Player Controller and GroundCheck obejcts into the inspector. We will need to create a new layer called Ground and attach it to every object we consider ground, in Ground Mask we will choose Ground. Adjusting the parameters will depend on each type of game. 
+
+### WeaponSwitching
+
+ 
+
+### Target
+
+When added to any 3D object with a collider, this state will give health to the chosen object and will make it disappear or destroy itself when the suitable health goes below 0. The object's health can be changed in the inspector when we add the state to any object.
+
+### DestroyBullet
+
+This state will simply make the chosen bullet disappear or destroy itself when in contact with an object containing a collider. This state needs to be added to the bullet object prefab. Its object collider will need to be ticked as `is Trigger`.
+
